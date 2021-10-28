@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  app:
+    build: ./app
+    volumes:
+      - ./app/src:/var/www/html
+    ports:
+      - "8000:80"
+    links:
+      - db:db
+  db:
+    build: ./db
